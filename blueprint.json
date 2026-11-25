@@ -24,8 +24,8 @@
       "wall_rating": "compartment_wall",
       "module_count": 2,
       "max_modules": 35,
-      "public_symbol_count": 4,
-      "breaker_count": 4,
+      "public_symbol_count": 5,
+      "breaker_count": 5,
       "topological_rank": 2,
       "redline_status": "existing"
     },
@@ -161,6 +161,14 @@
       "redline_status": "existing"
     },
     {
+      "pin_id": "ledger_starter/domain::in:compute_volume_rebate",
+      "room_id": "ledger_starter/domain",
+      "symbol_name": "compute_volume_rebate",
+      "direction": "inbound_port",
+      "has_circuit_breaker": true,
+      "redline_status": "existing"
+    },
+    {
       "pin_id": "ledger_starter/domain::in:net_after_fee",
       "room_id": "ledger_starter/domain",
       "symbol_name": "net_after_fee",
@@ -219,6 +227,12 @@
       "room_id": "ledger_starter/domain",
       "symbol_name": "build_settlement_quote",
       "guard_kind": "validate_call"
+    },
+    {
+      "breaker_id": "ledger_starter/domain::cb:compute_volume_rebate",
+      "room_id": "ledger_starter/domain",
+      "symbol_name": "compute_volume_rebate",
+      "guard_kind": "ensure"
     },
     {
       "breaker_id": "ledger_starter/domain::cb:net_after_fee",
@@ -289,5 +303,5 @@
   ],
   "invariant_pins": [],
   "redlines": [],
-  "netlist_digest": "sha256:02a942fa95246442d1e507544b6d655dbd4b797df26d1177a583c1598b7aff4f"
+  "netlist_digest": "sha256:488e10d91b7538075a2d31c8c47d0380c98b17e6523ceb018c07590780d59d7b"
 }

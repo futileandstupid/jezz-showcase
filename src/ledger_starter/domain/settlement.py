@@ -1,4 +1,4 @@
-"""Pure settlement fee calculus with closed Pydantic schemas and Z3-provable contracts."""
+"""Pure settlement fee and rebate calculus with closed Pydantic schemas and Z3 contracts."""
 
 from typing import Annotated, Final
 
@@ -48,6 +48,16 @@ def net_after_fee(gross_cents: PositiveCents, fee_bps: BasisPoints) -> NonNegati
     """Compute net integer cents after deducting integer basis-point fees."""
     fee_cents = (gross_cents * fee_bps) // 10_000
     return gross_cents - fee_cents
+
+
+@validate_call(config=CALL_CONFIG, validate_return=True)
+@icontract.require(
+    lambda fee_cents, rebate_bps: 0 <= fee_cents <= 1_000_000_000 and 0 <= rebate_bps <= 5_000
+)
+@icontract.ensure(lambda fee_cents, result: 0 <= result <= fee_cents)
+def compute_volume_rebate(fee_cents: NonNegativeCents, rebate_bps: BasisPoints) -> NonNegativeCents:
+    """Compute bounded fee rebate (capped at 50% = 5,000 bps of collected fee_cents)."""
+    return (fee_cents * rebate_bps) // 10_000
 
 
 @validate_call(config=CALL_CONFIG, validate_return=True)
