@@ -46,3 +46,4 @@ jobs:
           language: "python"
           blueprint-target: "blueprint.json"
           prove: "require-deductive"
+          dossier: "dossier.json"
