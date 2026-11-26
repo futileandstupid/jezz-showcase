@@ -11,7 +11,7 @@
 - **`src/ledger_showcase/gateway/`** — Bounded wire adapter routing strictly through `ledger_showcase.domain` perimeter exports.
 - **Verification Commands:**
   - `uv run ruff check . && uv run mypy . && uv run pytest`
-  - `uvx --from git+https://github.com/futileandstupid/jezz@v0.6.0 jezz inspect .`
-  - `uvx --from git+https://github.com/futileandstupid/jezz@v0.6.0 jezz prove . --require-deductive`
-  - `uvx --from git+https://github.com/futileandstupid/jezz@v0.6.0 jezz blueprint . --verify-target blueprint.json`
-  - `uvx --from git+https://github.com/futileandstupid/jezz@v0.6.0 jezz audit dossier.json`
+  - `uvx --from git+https://github.com/futileandstupid/jezz@v0.6.1 jezz inspect .`
+  - `uvx --from git+https://github.com/futileandstupid/jezz@v0.6.1 jezz prove . --require-deductive`
+  - `uvx --from git+https://github.com/futileandstupid/jezz@v0.6.1 jezz blueprint . --verify-target blueprint.json`
+  - `uvx --from git+https://github.com/futileandstupid/jezz@v0.6.1 jezz audit dossier.json`
