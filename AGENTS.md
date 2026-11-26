@@ -2,9 +2,9 @@
 
 ## Purpose & Protected Branches
 `futileandstupid/jezz-showcase` is the live Pull Request crucible demonstrating **Jezz Software Building Code (`JBC` Edition 1.3)**, **Sheet A-1/E-1 Blueprint LVS**, and **Z3 Contract Proofs** on GitHub Actions:
-- **Open PR #3 (`pr/unverified-sdd-agent`):** Intentionally demonstrates a rejected unverified patch (`RED_TAG` + LVS `SHORT_CIRCUIT`).
-- **Open PR #4 (`pr/verified-pce-agent`):** Intentionally demonstrates an `OCCUPANCY_SEALED` Z3-proved **Permit-and-Contract Engineering (`PCE`)** patch.
-- **Ruleset Constraints:** `preserve-showcase-pr-branches` blocks deletion and force-pushes on `refs/heads/pr/*`—never close, merge, or force-push PR #3 or PR #4. `main-showcase-gate` enforces `bypass_actors = []` and requires green `Enforce JBC v1.3, Blueprint LVS, Z3 Contracts, & PCE Dossier` checks on `main` (land changes to `main` via non-`pr/*` feature branches such as `chore/*` or `feat/*`).
+- **Open PR #1 (`pr/unverified-vibe-coding`):** Intentionally demonstrates a rejected unverified patch (`RED_TAG` + LVS `SHORT_CIRCUIT`).
+- **Open PR #2 (`pr/certified-pce-rebate`):** Intentionally demonstrates an `OCCUPANCY_SEALED` Z3-proved **Permit-and-Contract Engineering (`PCE`)** patch.
+- **Ruleset Constraints:** `preserve-showcase-pr-branches` blocks deletion and force-pushes on `refs/heads/pr/*`—never close, merge, or force-push the open showcase PRs. `main-showcase-gate` enforces `bypass_actors = []` and requires green `Enforce JBC v1.3, Blueprint LVS, Z3 Contracts, & PCE Dossier` checks on `main` (land changes to `main` via non-`pr/*` feature branches such as `chore/*` or `feat/*`).
 
 ## Compartment Architecture & Gates
 - **`src/ledger_showcase/domain/`** — Closed Pydantic models (`STRICT_FROZEN_CONFIG`), `@validate_call` circuit breakers, and Z3-provable `@icontract` postconditions.
